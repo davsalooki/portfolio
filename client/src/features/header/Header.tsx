@@ -1,32 +1,34 @@
+import { NavLink } from 'react-router-dom'
+
 const Header = () => {
   return (
     <div>
       <nav className="border-b border-gray-300">
         <div className="flex items-center justify-between p-4">
-          <a href="/" className="text-2xl">
+          <NavLink to="/" className={({ isActive }: { isActive: boolean }) => (isActive ? 'text-2xl text-green-800' : 'text-2xl')}>
             David Le
-          </a>
+          </NavLink>
 
           <ul className="flex space-x-6 text-xl font-extralight">
             <li>
-              <a href="/" className="hover:text-green-600">
+              <NavLink to="/" className={({ isActive }: { isActive: boolean }) => (isActive ? 'text-green-800 font-normal' : 'hover:text-green-600')}>
                 about
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/blog" className="hover:text-green-600">
+              <NavLink to="/blog" className={({ isActive }: { isActive: boolean }) => (isActive ? 'text-green-800 font-normal' : 'hover:text-green-600')}>
                 blog
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/gallery" className="hover:text-green-600">
+              <NavLink to="/gallery" className={({ isActive }: { isActive: boolean }) => (isActive ? 'text-green-800 font-normal' : 'hover:text-green-600')}>
                 gallery
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/projects" className="hover:text-green-600">
+              <NavLink to="/projects" className={({ isActive }: { isActive: boolean }) => (isActive ? 'text-green-800 font-normal' : 'hover:text-green-600')}>
                 projects
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
